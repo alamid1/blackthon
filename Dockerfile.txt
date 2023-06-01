@@ -1,0 +1,11 @@
+FROM theblackthon/blackub:slim-buster
+
+RUN git clone https://github.com/theblackthon/blackub.git /root/blackub
+
+WORKDIR /root/blackub
+
+RUN pip3 install --no-cache-dir -r requirements.txt
+
+ENV PATH="/home/blackub/bin:$PATH"
+
+CMD ["python3","-m","blackub"]
